@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nmnielsen.Web", "nmnielsen.Web\nmnielsen.Web.csproj", "{01EDFC7D-29B0-43BE-85A0-225C411D8050}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nmnielsen.Web", "nmnielsen.Web\nmnielsen.Web.csproj", "{01EDFC7D-29B0-43BE-85A0-225C411D8050}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nmnielsen.Service", "nmnielsen.Service\nmnielsen.Service.csproj", "{2D3946AB-C856-4179-B7F6-C3D0E42C4B9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nmnielsen.Service", "nmnielsen.Service\nmnielsen.Service.csproj", "{2D3946AB-C856-4179-B7F6-C3D0E42C4B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nmnielsen.Repository", "nmnielsen.Repository\nmnielsen.Repository.csproj", "{E0851D8F-38FD-4CE6-8AEE-B5354B27574D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nmnielsen.Repository", "nmnielsen.Repository\nmnielsen.Repository.csproj", "{E0851D8F-38FD-4CE6-8AEE-B5354B27574D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
