@@ -18,8 +18,16 @@ namespace nmnielsen.Repository.Domain
         {
             #region Project table
             //Keys And Relations
+            modelBuilder.Entity<Project>().HasKey(p => p.Id);
+
             //Properties
+            modelBuilder.Entity<Project>().Property(p => p.StartDate).HasDefaultValueSql("GetDate()");
+            modelBuilder.Entity<Project>().Property(p => p.IsDeleted).HasDefaultValue(false);
+
             //Data
+            modelBuilder.Entity<Project>().HasData(
+                new Project {Id = 1, Name = "nmnielsen.dk website", Description = "This project is the site you se this on"}
+                );
             #endregion
 
             #region User table
