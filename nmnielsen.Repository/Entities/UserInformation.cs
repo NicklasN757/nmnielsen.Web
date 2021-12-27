@@ -31,5 +31,8 @@ namespace nmnielsen.Repository.Entities
         /// </summary>
         [Required]
         public bool IsAdmin { get; set; }
+
+        //Navigations Properties
+        public User User { get; set; }
     }
 }

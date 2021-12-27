@@ -21,5 +21,8 @@ namespace nmnielsen.Repository.Entities
         /// </summary>
         [Required]
         public string Password { get; set; }
+
+        //Navigations Properties
+        public UserInformation UserInformation { get; set; }
     }
 }
