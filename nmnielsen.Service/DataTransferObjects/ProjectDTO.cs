@@ -7,9 +7,19 @@ public class ProjectDTO
     public int Id { get; set; }
 
     /// <summary>
+    /// The project image name
+    /// </summary>
+    public string? Imagename { get; set; }
+
+    /// <summary>
     /// The project name
     /// </summary>
     public string Name { get; set; }
+
+    /// <summary>
+    /// The short project description
+    /// </summary>
+    public string? ShortDescription { get; set; }
 
     /// <summary>
     /// The project description

@@ -11,7 +11,7 @@ using nmnielsen.Repository.Domain;
 namespace nmnielsen.Repository.Migrations
 {
     [DbContext(typeof(NmnielsenContext))]
-    partial class nmnielsenContextModelSnapshot : ModelSnapshot
+    partial class NmnielsenContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,9 @@ namespace nmnielsen.Repository.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Imagename")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -45,6 +48,10 @@ namespace nmnielsen.Repository.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortDescription")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("StartDate")
                         .ValueGeneratedOnAdd()
@@ -59,11 +66,13 @@ namespace nmnielsen.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "This project is the site you see this on",
+                            Description = "I marts 2022 bestemte jeg mig for at lave en hjemmeside, hvor jeg kunne dele min projecter og fortælle lidt om mig selv, dette er den hjemmeside du ser det her på. Formålet med projektet var bare som sagt at kunne vise hvad jeg har arbejdet med og for at kunne fortælle lidt om mig selv, men jeg lavede den også for at kunne få et sted jeg kunne bruge som et sandbox miljø til at øve og blive bedre til de ting jeg lære igennem tiden.",
                             EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Imagename = "nmnielsen.dk_hjemmesiden",
                             IsDeleted = false,
-                            Name = "nmnielsen.dk website",
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            Name = "nmnielsen.dk hjemmesiden",
+                            ShortDescription = "Det her projekt er den side du er på nu.",
+                            StartDate = new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 #pragma warning restore 612, 618

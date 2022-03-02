@@ -10,10 +10,21 @@ public class Project
     public int Id { get; set; }
 
     /// <summary>
+    /// The project image name
+    /// </summary>
+    public string? Imagename { get; set; }
+
+    /// <summary>
     /// The project name
     /// </summary>
     [Required]
     public string Name { get; set; }
+
+    /// <summary>
+    /// The short project description
+    /// </summary>
+    [MaxLength(100)]
+    public string? ShortDescription { get; set; }
 
     /// <summary>
     /// The project description

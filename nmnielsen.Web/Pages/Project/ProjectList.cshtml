@@ -8,9 +8,12 @@
     <div class="row">
         @foreach (ProjectDTO project in @Model.Projects)
         {
-            <div class="card">
+            <div class="card col-3 p-2 border-primary m-auto">
+                <img src="~/img/@(project.Imagename).jpg" class="card-img-top m-auto border border-primary" alt="https://www"/>
                 <div class="card-body">
-                    
+                    <h5 class="card-title border-bottom border-primary">@project.Name</h5>
+                    <p class="card-text overflow-hidden">@project.ShortDescription</p>
+                    <a asp-route-ProjectId="@project.Id" asp-page="ProjectDetails" class="btn btn-primary">Detaljer</a>
                 </div>
             </div>
         }
