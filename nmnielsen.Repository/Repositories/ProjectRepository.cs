@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using nmnielsen.Repository.Domain;
+using nmnielsen.Repository.Entities;
+using nmnielsen.Repository.Interfaces;
 
 namespace nmnielsen.Repository.Repositories;
-public class ProjectRepository
+public class ProjectRepository : GenericRepository<Project>, IProjectRepository
 {
-
+    private readonly NmnielsenContext _dbContext;
+    public ProjectRepository(NmnielsenContext nmnielsenContext) : base(nmnielsenContext) => _dbContext = nmnielsenContext; 
 }

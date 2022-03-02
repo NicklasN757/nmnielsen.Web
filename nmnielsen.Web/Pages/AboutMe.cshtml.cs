@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace nmnielsen.Web.Pages.Project;
+namespace nmnielsen.Web.Pages;
 
-public class ProjectDetailsModel : PageModel
+public class AboutMeModel : PageModel
 {
     public void OnGet()
     {

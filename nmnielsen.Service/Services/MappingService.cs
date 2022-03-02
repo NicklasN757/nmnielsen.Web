@@ -1,4 +1,8 @@
-﻿namespace nmnielsen.Service.Services;
+﻿using nmnielsen.Repository.Entities;
+using nmnielsen.Service.DataTransferObjects;
+
+namespace nmnielsen.Service.Services;
+
 /// <summary>
 /// The MappingService. Used for Automapper so only 1 mapper is needed.
 /// </summary>
@@ -13,7 +17,9 @@ public class MappingService : BaseService
         AutoMapper.MapperConfiguration mapperConfig = new AutoMapper.MapperConfiguration(cfg =>
         {
             #region Class Mappings
-
+            // Project
+            cfg.CreateMap<Project, ProjectDTO>();
+            cfg.CreateMap<ProjectDTO, Project>();
             #endregion
         });
 

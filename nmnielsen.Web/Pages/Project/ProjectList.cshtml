@@ -1,4 +1,18 @@
 ﻿@page
+@using nmnielsen.Service.DataTransferObjects
 @model nmnielsen.Web.Pages.Project.ProjectListModel
 @{
 }
+
+<div class="container">
+    <div class="row">
+        @foreach (ProjectDTO project in @Model.Projects)
+        {
+            <div class="card">
+                <div class="card-body">
+                    
+                </div>
+            </div>
+        }
+    </div>
+</div>
