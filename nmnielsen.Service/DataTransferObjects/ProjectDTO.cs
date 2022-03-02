@@ -14,7 +14,7 @@ public class ProjectDTO
     /// <summary>
     /// The project name
     /// </summary>
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// The short project description
@@ -24,7 +24,12 @@ public class ProjectDTO
     /// <summary>
     /// The project description
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
+
+    /// <summary>
+    /// The project status message
+    /// </summary>
+    public string? StatusMessage { get; set; }
 
     /// <summary>
     /// The project start date

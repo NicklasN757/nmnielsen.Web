@@ -5,17 +5,28 @@
 }
 
 <div class="container">
-    <div class="row">
-        @foreach (ProjectDTO project in @Model.Projects)
+    <div class="row justify-content-evenly">
+        @if (Model.Projects.Count >= 1)
         {
-            <div class="card col-3 p-2 border-primary m-auto">
-                <img src="~/img/@(project.Imagename).jpg" class="card-img-top m-auto border border-primary" alt="https://www"/>
-                <div class="card-body">
-                    <h5 class="card-title border-bottom border-primary">@project.Name</h5>
-                    <p class="card-text overflow-hidden">@project.ShortDescription</p>
-                    <a asp-route-ProjectId="@project.Id" asp-page="ProjectDetails" class="btn btn-primary">Detaljer</a>
+            @foreach (ProjectDTO project in @Model.Projects)
+            {
+                <div class="card col-3 border-primary">
+                    <img src="~/img/@(project.Imagename)" class="border border-primary mt-2" style="max-height: 40%" alt="@project.Name" />
+                    <div class="card-header border-primary">
+                        <h5 class="card-title mb-0">@project.Name</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">@project.ShortDescription</p>
+                    </div>
+                    <div class="card-footer text-center border-primary">
+                        <div class="row text-start">
+                            <p class="fw-bold col-6">Projekt status: </p>
+                            <p class="col-6">@project.StatusMessage</p>
+                        </div>
+                        <a asp-route-ProjectId="@project.Id" asp-page="ProjectDetails" class="btn btn-primary">Detaljer</a>
+                    </div>
                 </div>
-            </div>
+            }
         }
     </div>
 </div>

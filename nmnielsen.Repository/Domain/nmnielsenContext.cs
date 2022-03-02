@@ -16,17 +16,27 @@ public class NmnielsenContext : DbContext
         //Properties
         modelBuilder.Entity<Project>().Property(p => p.StartDate).HasDefaultValueSql("GetDate()");
         modelBuilder.Entity<Project>().Property(p => p.IsDeleted).HasDefaultValue(false);
+        modelBuilder.Entity<Project>().Property(p => p.Imagename).HasDefaultValue("No_Image_Icon.png");
 
         //Data
         modelBuilder.Entity<Project>().HasData(
             new Project { Id = 1,
-                Imagename = "nmnielsen.dk_hjemmesiden",
+                Imagename = "nmnielsen.dk_hjemmesiden.jpg",
                 Name = "nmnielsen.dk hjemmesiden", 
-                ShortDescription = "Det her projekt er den side du er på nu.", 
+                ShortDescription = "Det her projekt er den side du er på lige nu.", 
                 Description = "I marts 2022 bestemte jeg mig for at lave en hjemmeside, hvor jeg kunne dele min projecter og fortælle lidt om mig selv, dette er den hjemmeside du ser det her på. " +
                 "Formålet med projektet var bare som sagt at kunne vise hvad jeg har arbejdet med og for at kunne fortælle lidt om mig selv, men jeg lavede den også for at kunne få " +
                 "et sted jeg kunne bruge som et sandbox miljø til at øve og blive bedre til de ting jeg lære igennem tiden.", 
-                StartDate=DateTime.Parse("01-03-2022") }
+                StatusMessage = "Igang",
+                StartDate = DateTime.Parse("01-03-2022") },
+
+            new Project { Id = 2, 
+                Name = "MachineNote App",
+                ShortDescription = "App til at notere maskiner og andre ting ned.",
+                Description = "Dette projekt er en app man kan bruge til at notere maskiner og andre ting ned i, da projektet lige er startet er der ikke så meget at skrive om det i nu. " +
+                "Hvad jeg kan skrive er at projektet er oprette da min far har efterspurgt en app han kan bruge oppe på hans arbejde, så han kan holde log på de maskiner han har serviceret.",
+                StatusMessage = "Planlagt",
+                StartDate = DateTime.Parse("02-03-2022")}
             );
         #endregion
     }

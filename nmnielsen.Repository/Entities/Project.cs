@@ -18,18 +18,24 @@ public class Project
     /// The project name
     /// </summary>
     [Required]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// The short project description
     /// </summary>
-    [MaxLength(100)]
+    [MaxLength(50)]
     public string? ShortDescription { get; set; }
 
     /// <summary>
     /// The project description
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
+
+    /// <summary>
+    /// The project status message
+    /// </summary>
+    [Required]
+    public string? StatusMessage { get; set; }
 
     /// <summary>
     /// The project start date
