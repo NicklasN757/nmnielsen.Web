@@ -14,7 +14,7 @@ public class ProjectListModel : PageModel
 
     public async Task<IActionResult> OnGet()
     {
-        Projects = await _projectService.GetAllAsync();
+        Projects = await _projectService.GetAllNotHidden();
 
         return Page();
     }

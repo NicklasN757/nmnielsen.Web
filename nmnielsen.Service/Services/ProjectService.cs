@@ -12,5 +12,24 @@ public class ProjectService : GenericService<ProjectDTO, IProjectRepository, Pro
     {
         _projectRepository = projectRepository;
         _mappingService = mappingService;
-    } 
+    }
+
+    //Calls and logs the "GetAllNotHidden" function from the ProjectRepository
+    public async Task<List<ProjectDTO>> GetAllNotHidden()
+    {
+        try
+        {
+            List<ProjectDTO> tmpList = _mappingService._mapper.Map<List<ProjectDTO>>(await _projectRepository.GetAllNotHidden());
+
+            LogInformation($"Successfully fetched a list of projects.");
+
+            return tmpList;
+        }
+        catch (Exception ex)
+        {
+            LogError($"Failed to fetch a list of projects.", ex);
+
+            return new List<ProjectDTO>();
+        }
+    }
 }

@@ -3,5 +3,9 @@
 namespace nmnielsen.Service.Interfaces;
 public interface IProjectService : IGenericService<ProjectDTO>
 {
-    //Nothing to see here for now at least...
+    /// <summary>
+    /// Gets all projects thats not marked as hidden
+    /// </summary>
+    /// <returns>A list of project that not hidden</returns>
+    Task<List<ProjectDTO>> GetAllNotHidden();
 }
