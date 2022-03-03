@@ -42,6 +42,11 @@ public class ProjectDTO
     public DateTime EndDate { get; set; }
 
     /// <summary>
+    /// The project isHidden variable
+    /// </summary>
+    public bool IsHidden { get; set; }
+
+    /// <summary>
     /// The project isDeleted variable
     /// </summary>
     public bool IsDeleted { get; set; }

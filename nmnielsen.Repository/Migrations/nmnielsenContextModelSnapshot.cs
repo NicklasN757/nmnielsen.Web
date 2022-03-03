@@ -37,11 +37,17 @@ namespace nmnielsen.Repository.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Imagename")
+                        .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(max)")
                         .HasDefaultValue("No_Image_Icon.png");
 
                     b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<bool>("IsHidden")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
@@ -75,20 +81,22 @@ namespace nmnielsen.Repository.Migrations
                             EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Imagename = "nmnielsen.dk_hjemmesiden.jpg",
                             IsDeleted = false,
+                            IsHidden = false,
                             Name = "nmnielsen.dk hjemmesiden",
                             ShortDescription = "Det her projekt er den side du er på lige nu.",
-                            StartDate = new DateTime(2022, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StatusMessage = "Igang"
+                            StartDate = new DateTime(2022, 3, 1, 21, 0, 0, 0, DateTimeKind.Unspecified),
+                            StatusMessage = "Igangværende"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Dette projekt er en app man kan bruge til at notere maskiner og andre ting ned i, da projektet lige er startet er der ikke så meget at skrive om det i nu. Hvad jeg kan skrive er at projektet er oprette da min far har efterspurgt en app han kan bruge oppe på hans arbejde, så han kan holde log på de maskiner han har serviceret.",
+                            Description = "Dette projekt er en app man kan bruge til at notere maskiner og andre ting ned i, da projektet lige er startet er der ikke så meget at skrive om det i nu. Hvad jeg kan skrive er at projektet er oprette da min far har efterspurgt en app han kunne bruge oppe på hans arbejde, så han kan holde log på de maskiner han har serviceret.",
                             EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
+                            IsHidden = false,
                             Name = "MachineNote App",
                             ShortDescription = "App til at notere maskiner og andre ting ned.",
-                            StartDate = new DateTime(2022, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2022, 3, 2, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             StatusMessage = "Planlagt"
                         });
                 });

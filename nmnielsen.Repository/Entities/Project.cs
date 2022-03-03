@@ -12,6 +12,7 @@ public class Project
     /// <summary>
     /// The project image name
     /// </summary>
+    [Required]
     public string? Imagename { get; set; }
 
     /// <summary>
@@ -46,6 +47,12 @@ public class Project
     /// The project end date
     /// </summary>
     public DateTime EndDate { get; set; }
+
+    /// <summary>
+    /// The project isHidden variable
+    /// </summary>
+    [Required]
+    public bool IsHidden { get; set; }
 
     /// <summary>
     /// The project isDeleted variable
