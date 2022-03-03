@@ -21,8 +21,7 @@ builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<NmnielsenContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-    .EnableSensitiveDataLogging(true));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
