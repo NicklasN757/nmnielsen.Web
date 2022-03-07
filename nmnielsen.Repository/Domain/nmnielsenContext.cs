@@ -25,9 +25,9 @@ public class NMNielsenContext : DbContext
                 Imagename = "nmnielsen_hjemmesiden.jpg",
                 Name = "nmnielsen hjemmesiden", 
                 ShortDescription = "Det her projekt er den side du er på lige nu.", 
-                Description = "I marts 2022 bestemte jeg mig for at lave en hjemmeside, hvor jeg kunne dele min projecter og fortælle lidt om mig selv, dette er den hjemmeside du ser det her på. " +
+                Description = "I marts 2022 bestemte jeg mig for at lave en hjemmeside, hvor jeg kunne dele min projekter og fortælle lidt om mig selv, dette er den hjemmeside du ser det her på. " +
                 "Formålet med projektet var bare som sagt at kunne vise hvad jeg har arbejdet med og for at kunne fortælle lidt om mig selv, men jeg lavede den også for at kunne få " +
-                "et sted jeg kunne bruge som et sandbox miljø til at øve og blive bedre til de ting jeg lære igennem tiden.", 
+                "et sted jeg kunne bruge som et sandbox miljø til at øve og blive bedre til de ting jeg lærer igennem tiden.", 
                 StatusMessage = "Igangværende",
                 StartDate = DateTime.Parse("01-03-2022 21:00") },
 

@@ -21,17 +21,16 @@ builder.Services.AddScoped<IProjectService, ProjectService>();
 
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<NMNielsenContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection"))
-    .EnableSensitiveDataLogging(true));
-
 builder.Services.AddAuth0WebAppAuthentication(options =>
 {
     options.Domain = builder.Configuration["Auth0:Domain"];
     options.ClientId = builder.Configuration["Auth0:ClientId"];
-    options.ClientSecret = builder.Configuration["Auth0:ClientSecret"];
     options.Scope = "openid profile email";
 });
+
+builder.Services.AddDbContext<NMNielsenContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection"))
+    .EnableSensitiveDataLogging(true));
 
 var app = builder.Build();
 
@@ -52,6 +51,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
