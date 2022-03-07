@@ -10,8 +10,8 @@ using nmnielsen.Repository.Domain;
 
 namespace nmnielsen.Repository.Migrations
 {
-    [DbContext(typeof(NmnielsenContext))]
-    partial class NmnielsenContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(NMNielsenContext))]
+    partial class NMNielsenContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -79,10 +79,10 @@ namespace nmnielsen.Repository.Migrations
                             Id = 1,
                             Description = "I marts 2022 bestemte jeg mig for at lave en hjemmeside, hvor jeg kunne dele min projecter og fortælle lidt om mig selv, dette er den hjemmeside du ser det her på. Formålet med projektet var bare som sagt at kunne vise hvad jeg har arbejdet med og for at kunne fortælle lidt om mig selv, men jeg lavede den også for at kunne få et sted jeg kunne bruge som et sandbox miljø til at øve og blive bedre til de ting jeg lære igennem tiden.",
                             EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Imagename = "nmnielsen.dk_hjemmesiden.jpg",
+                            Imagename = "nmnielsen_hjemmesiden.jpg",
                             IsDeleted = false,
                             IsHidden = false,
-                            Name = "nmnielsen.dk hjemmesiden",
+                            Name = "nmnielsen hjemmesiden",
                             ShortDescription = "Det her projekt er den side du er på lige nu.",
                             StartDate = new DateTime(2022, 3, 1, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             StatusMessage = "Igangværende"

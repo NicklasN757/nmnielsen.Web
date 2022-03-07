@@ -1,3 +1,4 @@
+using Auth0.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using nmnielsen.Repository.Domain;
 using nmnielsen.Repository.Interfaces;
@@ -20,14 +21,27 @@ builder.Services.AddScoped<IProjectService, ProjectService>();
 
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<NmnielsenContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<NMNielsenContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection"))
+    .EnableSensitiveDataLogging(true));
+
+builder.Services.AddAuth0WebAppAuthentication(options =>
+{
+    options.Domain = builder.Configuration["Auth0:Domain"];
+    options.ClientId = builder.Configuration["Auth0:ClientId"];
+    options.ClientSecret = builder.Configuration["Auth0:ClientSecret"];
+    options.Scope = "openid profile email";
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
+    builder.Services.AddDbContext<NMNielsenContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    .EnableSensitiveDataLogging(false));
+
     app.UseExceptionHandler("/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();

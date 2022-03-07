@@ -2,10 +2,10 @@
 using nmnielsen.Repository.Entities;
 
 namespace nmnielsen.Repository.Domain;
-public class NmnielsenContext : DbContext
+public class NMNielsenContext : DbContext
 {
-    public NmnielsenContext() { }
-    public NmnielsenContext(DbContextOptions<NmnielsenContext> optionsBuilder) : base(optionsBuilder) { }
+    public NMNielsenContext() { }
+    public NMNielsenContext(DbContextOptions<NMNielsenContext> optionsBuilder) : base(optionsBuilder) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -22,8 +22,8 @@ public class NmnielsenContext : DbContext
         //Data
         modelBuilder.Entity<Project>().HasData(
             new Project { Id = 1,
-                Imagename = "nmnielsen.dk_hjemmesiden.jpg",
-                Name = "nmnielsen.dk hjemmesiden", 
+                Imagename = "nmnielsen_hjemmesiden.jpg",
+                Name = "nmnielsen hjemmesiden", 
                 ShortDescription = "Det her projekt er den side du er på lige nu.", 
                 Description = "I marts 2022 bestemte jeg mig for at lave en hjemmeside, hvor jeg kunne dele min projecter og fortælle lidt om mig selv, dette er den hjemmeside du ser det her på. " +
                 "Formålet med projektet var bare som sagt at kunne vise hvad jeg har arbejdet med og for at kunne fortælle lidt om mig selv, men jeg lavede den også for at kunne få " +

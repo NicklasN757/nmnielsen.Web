@@ -5,8 +5,8 @@ using nmnielsen.Repository.Interfaces;
 namespace nmnielsen.Repository.Repositories;
 public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
 {
-    private readonly NmnielsenContext _dbContext;
-    public GenericRepository(NmnielsenContext appContext) => _dbContext = appContext;
+    private readonly NMNielsenContext _dbContext;
+    public GenericRepository(NMNielsenContext appContext) => _dbContext = appContext;
 
     //Creates a new entity in the database
     public async Task CreateAsync(T entity)
