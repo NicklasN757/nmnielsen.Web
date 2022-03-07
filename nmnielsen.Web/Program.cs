@@ -17,6 +17,10 @@ builder.Services.AddScoped<MappingService, MappingService>();
 // Project
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<IProjectService, ProjectService>();
+
+// User
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 #endregion
 
 builder.Services.AddRazorPages();
@@ -25,12 +29,18 @@ builder.Services.AddAuth0WebAppAuthentication(options =>
 {
     options.Domain = builder.Configuration["Auth0:Domain"];
     options.ClientId = builder.Configuration["Auth0:ClientId"];
+    options.ClientSecret = builder.Configuration["Auth0:ClientSecret"];
     options.Scope = "openid profile email";
+}).WithAccessToken(options =>
+{
+    options.Audience = builder.Configuration["Auth0:Audience"];
 });
 
 builder.Services.AddDbContext<NMNielsenContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection"))
     .EnableSensitiveDataLogging(true));
+
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
