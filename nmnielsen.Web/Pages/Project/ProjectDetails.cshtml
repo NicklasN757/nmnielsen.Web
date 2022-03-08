@@ -7,6 +7,21 @@
     <div class="row border-bottom border-primary mb-3 text-start">
         <h1 class="text-white">@Model.Project.Name</h1>
     </div>
+    @if (Model.CanEdit || Model.CanDelete)
+    {
+        <div class="row border border-primary p-1 m-2 justify-content-start">
+            <h5 class="text-white border-bottom border-primary text-start">Admin Panel</h5>
+            @if (Model.CanEdit)
+            {
+                <a class="btn btn-warning col-1 m-1" asp-route-ProjectId="@Model.Project.Id" asp-page="ProjectGRUD/ProjectEdit">Edit</a>
+                <a class="btn btn-warning col-1 m-1">Hide</a>
+            }
+            @if (Model.CanDelete)
+            {
+                <a class="btn btn-danger col-1 m-1">Delete</a>
+            }
+        </div>
+    }
     <div class="row justify-content-evenly">
         <div class="col-8">
             <img src="~/img/@Model.Project.Imagename" class="border border-2 border-primary" style="object-fit: contain; max-height: 50vh; max-width: 100%;" alt="@Model.Project.Name" />
