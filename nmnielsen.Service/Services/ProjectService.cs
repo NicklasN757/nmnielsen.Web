@@ -10,8 +10,8 @@ public class ProjectService : GenericService<ProjectDTO, IProjectRepository, Pro
     private readonly IProjectRepository _projectRepository;
     public ProjectService(MappingService mappingService, IProjectRepository projectRepository) : base(mappingService, projectRepository)
     {
-        _projectRepository = projectRepository;
         _mappingService = mappingService;
+        _projectRepository = projectRepository;
     }
 
     //Calls and logs the "GetAllNotHidden" function from the ProjectRepository
